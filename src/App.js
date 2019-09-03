@@ -1,7 +1,6 @@
 /** @jsx jsx */
 import { jsx, css } from '@emotion/core'
 import React, { Component } from 'react';
-import './App.css';
 import Person from './Person/Person';
 
 class App extends Component {
@@ -15,9 +14,9 @@ class App extends Component {
     showPersons: false
   }
 
-  nameChangedHandler = ( event, id ) => {
-    const personIndex = this.state.persons.findIndex(p => {
-      return p.id === id;
+    nameChangedHandler = ( event, id ) => {
+      const personIndex = this.state.persons.findIndex(p => {
+        return p.id === id;
     });
 
     const person = {
@@ -47,14 +46,6 @@ class App extends Component {
   }
 
   render () {
-    const style = {
-      backgroundColor: 'white',
-      font: 'inherit',
-      border: '1px solid blue',
-      padding: '8px',
-      cursor: 'pointer'
-    };
-
     let persons = null;
 
     if ( this.state.showPersons ) {
@@ -73,11 +64,17 @@ class App extends Component {
     }
 
     return (
-      <div className="App">
+      <div css={css`text-align: center;`}>
         <h1>Hi, I'm a React App</h1>
         <p>This is really working!</p>
         <button
-          style={style}
+          css={css({
+            backgroundColor: 'white',
+            font: 'inherit',
+            border: '1px solid blue',
+            padding: '8px',
+            cursor: 'pointer'
+          })}
           onClick={this.togglePersonsHandler}>Toggle Persons</button>
         {persons}
       </div>

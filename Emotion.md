@@ -63,7 +63,7 @@ _@jsx jsx_ - This is a babel specific thing and only understandable by it. The _
 
 _jsx_ imported is the function "jsx" which is to be used by Babel for conversion of all jsx elements
 
-|           |             **Input**               |                 **Output**                        |
+|           |             **Input**      |                 **Output**                        |
 |-----------|----------------------------|---------------------------------------------------|
 | Before    | \<img src="avatar.png" /\> | React.createElement('img', { src: 'avatar.png' }) |
 | After     | \<img src="avatar.png" /\> | jsx('img', { src: 'avatar.png' })                 |
